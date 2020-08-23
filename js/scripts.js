@@ -12,15 +12,15 @@ function validateForm(e) {
     //if all are true
     var _newUser = getUserName();
     //1. dd code to update registered users array with the new user
-    //2. call render function
+
     registeredUsers.push(_newUser);
     if (registeredUsers.length > 5) {
       registeredUsers.shift();
     }
-
+    document.getElementById('registered-users').innerHTML = ''; //clears list before rendering registered users
+    //2. call render function
     renderRegisteredUsers();
     // add code to update registeredUsers array with new user and call render function
-    // TODO
     document.registration.reset(); // reset form input fields
   }
 }
